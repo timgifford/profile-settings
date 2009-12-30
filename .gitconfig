@@ -1,0 +1,32 @@
+[user]
+	name = Tim Gifford
+	email = tgifford@gmail.com
+[color]
+	branch = auto
+	status = auto
+[merge]
+    summary = true
+	tool = diffmerge
+[mergetool "kdiff3"]
+    cmd = "kdiff3.exe" \
+            "$PWD/$BASE" \
+                "$PWD/$LOCAL" \
+                "$PWD/$REMOTE" \
+                "$PWD/$MERGED" 
+    keepBackup = false
+	trustExitCode = false
+[diff]
+	tool = diffmerge
+	external = C:/Documents and Settings/tgifford/.git-diffmerge-diff.sh
+[difftool "kdiff3"]
+    cmd = "echo" \
+                "$PWD/$LOCAL" \
+                "$PWD/$REMOTE"
+[core]
+	excludesfile = /cygdrive/c/Documents and Settings/tgifford/.gitignore
+[mergetool "diffmerge"]
+	cmd = ~/.git-diffmerge-merge.sh \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+	trustExitCode = false
+[difftool "diffmerge"]
+	cmd = ~/.git-diffmerge-diff.sh \"$BASE\" \"$LOCAL\" \"$REMOTE\" 
+	trustExitCode = false

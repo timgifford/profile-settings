@@ -1,0 +1,5 @@
+.svn/
+*.suo
+obj/
+*.user
+_*/
