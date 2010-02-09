@@ -1,32 +1,22 @@
 [user]
 	name = Tim Gifford
-	email = tgifford@gmail.com
+	email = tgifford@geolearning.com
 [color]
 	branch = auto
 	status = auto
-[merge]
-    summary = true
+[core]
+	filemode = false
 	tool = diffmerge
-[mergetool "kdiff3"]
-    cmd = "kdiff3.exe" \
-            "$PWD/$BASE" \
-                "$PWD/$LOCAL" \
-                "$PWD/$REMOTE" \
-                "$PWD/$MERGED" 
-    keepBackup = false
-	trustExitCode = false
+[merge]
+	tool = diffmerge
+[mergetool "diffmerge"]
+	cmd = diffmerge -merge -nosplash -result=$MERGED -t1='mine' -t2='ancestor' -t3='theirs' $LOCAL $BASE $REMOTE
+	trustexitcode=true
 [diff]
 	tool = diffmerge
-	external = C:/Documents and Settings/tgifford/.git-diffmerge-diff.sh
-[difftool "kdiff3"]
-    cmd = "echo" \
-                "$PWD/$LOCAL" \
-                "$PWD/$REMOTE"
-[core]
-	excludesfile = /cygdrive/c/Documents and Settings/tgifford/.gitignore
-[mergetool "diffmerge"]
-	cmd = ~/.git-diffmerge-merge.sh \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
-	trustExitCode = false
 [difftool "diffmerge"]
-	cmd = ~/.git-diffmerge-diff.sh \"$BASE\" \"$LOCAL\" \"$REMOTE\" 
-	trustExitCode = false
+	cmd = diffmerge -nosplash -t1='mine' -t2='theirs' $LOCAL $REMOTE
+[alias]
+	co = checkout
+	st = status
+	br = branch
