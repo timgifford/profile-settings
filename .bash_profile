@@ -11,23 +11,9 @@ if [[ $OS == *darwin* ]] ; then
   export PATH=/opt/local/bin:/opt/local/sbin:$PATH  # OS-X Specific, with MacPorts and MySQL installed
 fi
 
-# if [[ $OS == *mingw32* ]] ; then
-    export PATH=/c/Maestro5/maestro/bin:$PATH
-# fi
-
 if [[ $OS == *cygwin* ]] ; then
-	# Add paths
-	export PATH=$PATH:/cygdrive/c/code/java/apache-maven-2.2.1/bin
-
-	alias maestro='cd /cygdrive/c/Maestro5/maestro/'
-	alias fitnesse='cd /cygdrive/c/Maestro5/m5svntrunk/ExternalTools/FitNesse/;./server.cmd&'
-	alias msbuild='/cygdrive/c/WINDOWS/Microsoft.NET/Framework/v2.0.50727/msbuild.exe'
-	alias mssql='net start MSSQL\$SQLEXPRESS'
-    alias gvim='/cygdrive/c/opt/vim/vim72/gvim.bat'
-    alias restart_mysql='/cygdrive/c/MySQL/logs/restart.bat'
     alias ls='ls  --color'
-    alias grep='grep --color=auto'
-    
+    alias grep='grep --color=auto'    
 fi
 
 # EDITOR=vi; export EDITOR
