@@ -1,0 +1,14 @@
+set wrap linebreak nolist
+
+nnoremap <leader>ev :vsplit ~/.vimrc.after<cr>
+nnoremap <leader>sv :source ~/.vimrc.after<cr>
+inoremap jk <esc>
+inoremap <esc> <nop>
+
+" Close a buffer without losing the spliv
+nnoremap <leader>d :bprevious<CR>:bdelete #<CR>
+nnoremap <leader>< :10winc <<CR>
+nnoremap <leader>> :10winc ><CR>
+
+" Copy to the Copy|Paste Buffer
+vnoremap <leader>y "*y
